@@ -12,7 +12,7 @@ python Feature_extractor.py -c Female Male Gorilla Armadillo Teddy Fourleg Ant O
 ```
 This computes the ShapeDNA for each sample in the dataset and saves it in a .npy file in the same path of their mesh.
 
-### Classify and get prediction results.
+### Classify and get prediction results
 ```bash
 python Classifier.py
 ```
