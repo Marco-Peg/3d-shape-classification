@@ -1,0 +1,10 @@
+Female
+Male
+Gorilla
+Armadillo
+Teddy
+Fourleg
+Ant
+Octopus
+Bird
+Glasses

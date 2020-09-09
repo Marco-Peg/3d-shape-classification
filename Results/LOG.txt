@@ -1,0 +1,32 @@
+\Features type: ShapeDNA
+\Features Size:11
+KNN_sqeuclidean_3
+	ACCURACY:88.00
+	PRECISION(mean):88.27
+	RECALL(mean):88.00
+
+KNN_canberra_3
+	ACCURACY:91.50
+	PRECISION(mean):92.01
+	RECALL(mean):91.50
+
+KNN_sqeuclidean_5
+	ACCURACY:86.00
+	PRECISION(mean):86.51
+	RECALL(mean):86.00
+
+SVM_linear_1
+	ACCURACY:89.50
+	PRECISION(mean):90.78
+	RECALL(mean):89.50
+
+SVM_rbf_1
+	ACCURACY:89.00
+	PRECISION(mean):89.49
+	RECALL(mean):89.00
+
+SVM_rbf_8
+	ACCURACY:93.50
+	PRECISION(mean):93.71
+	RECALL(mean):93.50
+
