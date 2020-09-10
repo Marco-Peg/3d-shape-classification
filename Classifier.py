@@ -3,7 +3,6 @@ from math import floor
 import numpy as np
 import os
 import glob
-from sklearn.decomposition import PCA
 
 import Utils
 import Models
@@ -63,18 +62,6 @@ def main(DNA_size=20, test_perc=20, PCA_size=0, n_partition=5):
                 shapes_test = shapes_test + [offs[j] for j in i_test[-1]]
 
         results_folder = 'Results'
-
-        # PCA
-        if PCA_size and PCA_size < DNA_size:
-            # normalize
-            import sklearn.preprocessing as pr
-            print("PCA ...", end='')
-            pca = PCA(PCA_size)
-            pca.fit(feat_train)
-            feat_train = pca.transform(pr.normalize(feat_train))
-            feat_test = pca.transform(pr.normalize(feat_test))
-            print("done")
-            results_folder += 'PCA'
 
         # Classification
         for metric,k in zip(METRICS,K):
@@ -159,13 +146,8 @@ def main(DNA_size=20, test_perc=20, PCA_size=0, n_partition=5):
 
     # Plot results
     with open(os.path.join('.', results_folder, 'LOG.txt'), "w") as output:
-        if PCA_size and PCA_size<DNA_size:
-            output.write("\Features type: ShapeDNA + PCA\n")
-        else:
-            output.write("\Features type: ShapeDNA\n")
+        output.write("\Features type: ShapeDNA\n")
         output.write("\Features Size:{:}\n".format(DNA_size))
-        if PCA_size and PCA_size<DNA_size:
-            output.write("\PCA Size:{:}\n".format(PCA_size))
 
     results = dict()
     results_f1 = dict()
